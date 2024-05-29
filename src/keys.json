@@ -1,0 +1,155 @@
+{
+  "rows": [
+    {
+      "keys": [
+        {"name": ["Esc"], "length": "1u", "qmk_name": "KC_ESC"},
+        {"name": ["F1"], "length": "1u", "qmk_name": "KC_F1"},
+        {"name": ["F2"], "length": "1u", "qmk_name": "KC_F2"},
+        {"name": ["F3"], "length": "1u", "qmk_name": "KC_F3"},
+        {"name": ["F4"], "length": "1u", "qmk_name": "KC_F4"},
+        {"name": ["F5"], "length": "1u", "qmk_name": "KC_F5"},
+        {"name": ["F6"], "length": "1u", "qmk_name": "KC_F6"},
+        {"name": ["F7"], "length": "1u", "qmk_name": "KC_F7"},
+        {"name": ["F8"], "length": "1u", "qmk_name": "KC_F8"},
+        {"name": ["F9"], "length": "1u", "qmk_name": "KC_F9"},
+        {"name": ["F10"], "length": "1u", "qmk_name": "KC_F10"},
+        {"name": ["F11"], "length": "1u", "qmk_name": "KC_F11"},
+        {"name": ["F12"], "length": "1u", "qmk_name": "KC_F12"},
+        {"name": ["PrtSc", "Print Screen"], "length": "1u", "qmk_name": "KC_PSCR"},
+        {"name": ["Scroll Lock"], "length": "1u", "qmk_name": "KC_SLCK"},
+        {"name": ["Pause", "Break"], "length": "1u", "qmk_name": "KC_PAUS"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["`", "~"], "length": "1u", "qmk_name": "KC_GRV"},
+        {"name": ["1", "!"], "length": "1u", "qmk_name": "KC_1"},
+        {"name": ["2", "@"], "length": "1u", "qmk_name": "KC_2"},
+        {"name": ["3", "#"], "length": "1u", "qmk_name": "KC_3"},
+        {"name": ["4", "$"], "length": "1u", "qmk_name": "KC_4"},
+        {"name": ["5", "%"], "length": "1u", "qmk_name": "KC_5"},
+        {"name": ["6", "^"], "length": "1u", "qmk_name": "KC_6"},
+        {"name": ["7", "&"], "length": "1u", "qmk_name": "KC_7"},
+        {"name": ["8", "*"], "length": "1u", "qmk_name": "KC_8"},
+        {"name": ["9", "("], "length": "1u", "qmk_name": "KC_9"},
+        {"name": ["0", ")"], "length": "1u", "qmk_name": "KC_0"},
+        {"name": ["-", "_"], "length": "1u", "qmk_name": "KC_MINS"},
+        {"name": ["=", "+"], "length": "1u", "qmk_name": "KC_EQL"},
+        {"name": ["Back Space"], "length": "2u", "qmk_name": "KC_BSPC"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["Tab"], "length": "1.5u", "qmk_name": "KC_TAB"},
+        {"name": ["Q"], "length": "1u", "qmk_name": "KC_Q"},
+        {"name": ["W"], "length": "1u", "qmk_name": "KC_W"},
+        {"name": ["E"], "length": "1u", "qmk_name": "KC_E"},
+        {"name": ["R"], "length": "1u", "qmk_name": "KC_R"},
+        {"name": ["T"], "length": "1u", "qmk_name": "KC_T"},
+        {"name": ["Y"], "length": "1u", "qmk_name": "KC_Y"},
+        {"name": ["U"], "length": "1u", "qmk_name": "KC_U"},
+        {"name": ["I"], "length": "1u", "qmk_name": "KC_I"},
+        {"name": ["O"], "length": "1u", "qmk_name": "KC_O"},
+        {"name": ["P"], "length": "1u", "qmk_name": "KC_P"},
+        {"name": ["[", "{"], "length": "1u", "qmk_name": "KC_LBRC"},
+        {"name": ["]", "}"], "length": "1u", "qmk_name": "KC_RBRC"},
+        {"name": ["\\", "|"], "length": "1.5u", "qmk_name": "KC_BSLS"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["Caps Lock"], "length": "1.75u", "qmk_name": "KC_CAPS"},
+        {"name": ["A"], "length": "1u", "qmk_name": "KC_A"},
+        {"name": ["S"], "length": "1u", "qmk_name": "KC_S"},
+        {"name": ["D"], "length": "1u", "qmk_name": "KC_D"},
+        {"name": ["F"], "length": "1u", "qmk_name": "KC_F"},
+        {"name": ["G"], "length": "1u", "qmk_name": "KC_G"},
+        {"name": ["H"], "length": "1u", "qmk_name": "KC_H"},
+        {"name": ["J"], "length": "1u", "qmk_name": "KC_J"},
+        {"name": ["K"], "length": "1u", "qmk_name": "KC_K"},
+        {"name": ["L"], "length": "1u", "qmk_name": "KC_L"},
+        {"name": [";", ":"], "length": "1u", "qmk_name": "KC_SCLN"},
+        {"name": ["'", "\""], "length": "1u", "qmk_name": "KC_QUOT"},
+        {"name": ["Enter"], "length": "2.25u", "qmk_name": "KC_ENT"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["Shift"], "length": "2.25u", "qmk_name": "KC_LSFT"},
+        {"name": ["Z"], "length": "1u", "qmk_name": "KC_Z"},
+        {"name": ["X"], "length": "1u", "qmk_name": "KC_X"},
+        {"name": ["C"], "length": "1u", "qmk_name": "KC_C"},
+        {"name": ["V"], "length": "1u", "qmk_name": "KC_V"},
+        {"name": ["B"], "length": "1u", "qmk_name": "KC_B"},
+        {"name": ["N"], "length": "1u", "qmk_name": "KC_N"},
+        {"name": ["M"], "length": "1u", "qmk_name": "KC_M"},
+        {"name": [",", "<"], "length": "1u", "qmk_name": "KC_COMM"},
+        {"name": [".", ">"], "length": "1u", "qmk_name": "KC_DOT"},
+        {"name": ["/", "?"], "length": "1u", "qmk_name": "KC_SLSH"},
+        {"name": ["Shift"], "length": "2.75u", "qmk_name": "KC_RSFT"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["Ctrl"], "length": "1.25u", "qmk_name": "KC_LCTL"},
+        {"name": ["Win", "Windows"], "length": "1.25u", "qmk_name": "KC_LGUI"},
+        {"name": ["Alt"], "length": "1.25u", "qmk_name": "KC_LALT"},
+        {"name": ["Space"], "length": "6.25u", "qmk_name": "KC_SPC"},
+        {"name": ["Alt", "AltGr"], "length": "1.25u", "qmk_name": "KC_RALT"},
+        {"name": ["Win", "Windows"], "length": "1.25u", "qmk_name": "KC_RGUI"},
+        {"name": ["Menu", "Application"], "length": "1.25u", "qmk_name": "KC_APP"},
+        {"name": ["Ctrl"], "length": "1.25u", "qmk_name": "KC_RCTL"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["Insert"], "length": "1u", "qmk_name": "KC_INS"},
+        {"name": ["Home"], "length": "1u", "qmk_name": "KC_HOME"},
+        {"name": ["Page Up"], "length": "1u", "qmk_name": "KC_PGUP"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["Delete"], "length": "1u", "qmk_name": "KC_DEL"},
+        {"name": ["End"], "length": "1u", "qmk_name": "KC_END"},
+        {"name": ["Page Down"], "length": "1u", "qmk_name": "KC_PGDN"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["Num Lock"], "length": "1u", "qmk_name": "KC_NLCK"},
+        {"name": ["/", "÷"], "length": "1u", "qmk_name": "KC_PSLS"},
+        {"name": ["*", "×"], "length": "1u", "qmk_name": "KC_PAST"},
+        {"name": ["-", "−"], "length": "1u", "qmk_name": "KC_PMNS"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["7", "Home"], "length": "1u", "qmk_name": "KC_HOME"},
+        {"name": ["8", "↑"], "length": "1u", "qmk_name": "KC_UP"},
+        {"name": ["9", "Page Up"], "length": "1u", "qmk_name": "KC_PGUP"},
+        {"name": ["+", "±"], "length": "1u", "qmk_name": "KC_PPLS"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["4", "←"], "length": "1u", "qmk_name": "KC_LEFT"},
+        {"name": ["5"], "length": "1u", "qmk_name": "KC_5"},
+        {"name": ["6", "→"], "length": "1u", "qmk_name": "KC_RGHT"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["1", "End"], "length": "1u", "qmk_name": "KC_END"},
+        {"name": ["2", "↓"], "length": "1u", "qmk_name": "KC_DOWN"},
+        {"name": ["3", "Page Down"], "length": "1u", "qmk_name": "KC_PGDN"}
+      ]
+    },
+    {
+      "keys": [
+        {"name": ["0", "Ins"], "length": "2u", "qmk_name": "KC_INS"},
+        {"name": [".", "Del"], "length": "1u", "qmk_name": "KC_DEL"}
+      ]
+    }
+  ]
+}
