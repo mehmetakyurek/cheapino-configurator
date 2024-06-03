@@ -6,7 +6,13 @@ import quantum from "./keycodes/quantum";
 import kbSettings from "./keycodes/kb-settings.ts";
 import appMediaMouse from "./keycodes/app-media-mouse.ts";
 import { KeyAttributes, Layer, getName } from "./App.tsx";
+import { setLayer } from "./store/layers.ts";
 export const keyTable = [...ansi, ...quantum, ...kbSettings, ...appMediaMouse]
+
+export const defaultKey: KeyAttributes = { name: "..." }
+
+// Parsing and rendering gotta be revamped
+
 
 let keys: Array<typeof rows[0]["keys"][0]> = []
 for (let k in rows) {
@@ -25,23 +31,25 @@ export function Cheapino(props: { layer: Layer }) {
 export function Thumb(props: { keys: KeyAttributes[] }) {
 	return <div class="flex text-[inherit] gap-[0.1em] justify-start [&>*:nth-child(3)]:pr-[1em] ">
 		<For each={props.keys}>
-			{(key, i) => <div style={{
+			{(key, i) => <KeyContainer col={i()} row={3}><div style={{
 				transform: "rotate(" + thumbRotate[i()] + "deg) translateY(" + (Math.abs(thumbRotate[i()])) + "px)"
 
 
-			}}> <Key {...key} /></div>}
+			}}> <Key {...key} /></div></KeyContainer>}
 		</For>
 
-	</div>;
+	</div >;
 }
 
 function KeyContainer(props: { col: number, row: number, children: JSX.Element }) {
 	const drop = (prop: typeof props, e: DragEvent) => {
 		e.preventDefault()
+		const key = JSON.parse(e.dataTransfer?.getData("key") ?? "")
+		const index = (10 * props.row) + props.col
+		setLayer(index, key)
 	}
 	return <div onDrop={[drop, props]}>{props.children}</div>
 }
-
 
 export function Columns(props: { keys: KeyAttributes[][] }) {
 	return <div class="flex [&>*:nth-child(5)]:pr-[4em] flex-row gap-[0.1em] w-min">
@@ -79,7 +87,7 @@ export function Key(props: KeyAttributes) {
 		onDrop={(e) => {
 			e.preventDefault()
 			const key = JSON.parse(e.dataTransfer?.getData("key")!) as KeyAttributes
-			console.log(key)
+			console.log(key, props)
 		}}
 		style={{ width: props.size + "em", height: props.size + "em" }}>
 		<Switch>
