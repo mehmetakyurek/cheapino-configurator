@@ -6,6 +6,13 @@
 .logo.solid:hover {
   filter: drop-shadow(0 0 2em #2f5d90);
 }
+.keyboard-rows:nth-child(2),
+.keyboard-rows:nth-child(4),
+.keyboard-rows:nth-child(7),
+.keyboard-rows:nth-child(9) {
+  transform: translateY(-10px)
+  
+}
 [role="tooltip"],
 .hidetooltip.hidetooltip.hidetooltip + [role="tooltip"] {
   visibility: hidden;

@@ -26,6 +26,7 @@ export function Cheapino(props: { layer: Layer }) {
 	return <div class="flex flex-col items-center text-[clamp(3rem,2.8vw,6rem)] ">
 		<Columns keys={cols()} />
 		<Thumb keys={props.layer.slice(30)} />
+
 	</div>;
 }
 export function Thumb(props: { keys: KeyAttributes[] }) {
@@ -33,7 +34,6 @@ export function Thumb(props: { keys: KeyAttributes[] }) {
 		<For each={props.keys}>
 			{(key, i) => <KeyContainer col={i()} row={3}><div style={{
 				transform: "rotate(" + thumbRotate[i()] + "deg) translateY(" + (Math.abs(thumbRotate[i()])) + "px)"
-
 
 			}}> <Key {...key} /></div></KeyContainer>}
 		</For>
@@ -45,15 +45,20 @@ function KeyContainer(props: { col: number, row: number, children: JSX.Element }
 	const drop = (prop: typeof props, e: DragEvent) => {
 		e.preventDefault()
 		const key = JSON.parse(e.dataTransfer?.getData("key") ?? "")
-		const index = (10 * props.row) + props.col
-		setLayer(index, key)
+		const index = getIndexFromColandRow(props.col, props.row)
+		setLayer(index, key, (e.target as HTMLElement).matches(".bg-container-key"))
 	}
-	return <div onDrop={[drop, props]}>{props.children}</div>
+	return <div class="container-key" onDrop={[drop, props]} > {props.children}</div >
+}
+
+function getIndexFromColandRow(col: number, row: number) {
+	return (10 * row) + col
 }
 
 export function Columns(props: { keys: KeyAttributes[][] }) {
 	return <div class="flex [&>*:nth-child(5)]:pr-[4em] flex-row gap-[0.1em] w-min">
 		<For each={props.keys}>{(col, index) => <Column paddingTop={paddings[index()]}>
+
 			<For each={col}>{(key, i) =>
 				<KeyContainer col={index()} row={i()}>
 					<Key {...key} />
@@ -69,25 +74,27 @@ function Column(props: { children: JSX.Element, paddingTop: number }) {
 		{props.children}
 	</div>;
 }
-export function Key(props: KeyAttributes) {
+export function Key(props: KeyAttributes & { position?: number }) {
 	const name = () => (props.code !== undefined ? (getName(props.code)) : "")
+	let keyref: HTMLDivElement | undefined;
 	return <div
+		ref={keyref}
 		class="w-[1em] h-[1em] flex flex-col items-center capitalize whitespace-pre-wrap overflow-hidden leading-4 select-none justify-center text-center bg-key text-key-text rounded-[.15em]"
 		classList={{
 			["w-[" + Number(props.size) / 1000 + "]"]: (props.size !== undefined)
 		}}
 		draggable={(name()?.length ?? 0) > 0 || props.modifier != undefined}
 		onDragStart={(e) => {
+			e.stopPropagation()
+			console.log(props, keyref)
 			e.dataTransfer?.setData("key", JSON.stringify(props))
 		}}
 		onDragEnter={(e) => {
 			e.preventDefault()
 		}}
 		onDragOver={e => e.preventDefault()}
-		onDrop={(e) => {
+		ondrop={(e) => {
 			e.preventDefault()
-			const key = JSON.parse(e.dataTransfer?.getData("key")!) as KeyAttributes
-			console.log(key, props)
 		}}
 		style={{ width: props.size + "em", height: props.size + "em" }}>
 		<Switch>
@@ -112,7 +119,6 @@ function InnerKey(props: { code: string }) {
 	console.log(props.code, name())
 	return <div>{name()}</div>
 }
-
 function LT(props: KeyAttributes) {
 	return <>
 		<div class="bg-layer-key text-[0.2em] flex justify-around w-full text-key">

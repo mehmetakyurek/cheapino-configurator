@@ -1,4 +1,4 @@
-import { createStore, produce } from "solid-js/store";
+import { createStore } from "solid-js/store";
 import { KeyAttributes, Layer } from "../App";
 import { parseKey } from "../Keyboard";
 import { layers as l } from "../layers.json"
@@ -18,9 +18,8 @@ const emptyKey: KeyAttributes = {
 	modifier: undefined,
 	size: undefined
 }
-export function setLayer(keyIndex: number, key: KeyAttributes, layerIndex = -1) {
-	console.log(keyIndex, key, state.selected, layerIndex > -1 ? layerIndex : state.selected)
-	setState("layers", [(layerIndex > -1 ? layerIndex : state.selected)], [keyIndex], { ...emptyKey, ...key })
+export function setLayer(keyIndex: number, key: KeyAttributes, removeContainer = false, layerIndex = -1) {
+	setState("layers", [(layerIndex > -1 ? layerIndex : state.selected)], [keyIndex], removeContainer ? { ...emptyKey, ...key } : key)
 }
 
 export function parseLayers(layers: Array<Array<string>>): Array<Layer> {

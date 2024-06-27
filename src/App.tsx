@@ -1,8 +1,9 @@
 import "./App.css";
-import { Cheapino, keyTable, parseKey } from "./Keyboard";
-import { JSXElement, createSignal } from "solid-js";
+import { Cheapino, keyTable } from "./Keyboard";
+import { JSXElement } from "solid-js";
 import KeyTable from "./KeyTable";
-import { setLayerIndex, state } from "./store/layers";
+import { ParseToQmk, setLayerIndex, state } from "./store/layers";
+import { saveFile } from "./file";
 
 export type Layer = Array<KeyAttributes>;
 
@@ -11,7 +12,9 @@ function App() {
 		<Cheapino layer={state.layers[state.selected]} />
 		<LayerSwitch layerLength={state.layers.length} onClick={i => setLayerIndex(i)} />
 		<KeyTable />
-
+		<button onClick={
+			() => ParseToQmk()
+		}>export</button>
 	</div>
 }
 
